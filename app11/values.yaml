@@ -1,7 +1,6 @@
 serviceAccount:
-  create: true  # Disable service account creation
-  name: ""  # Your existing GCP service account
-
+  create: true # Disable service account creation
+  name: "" # Your existing GCP service account
 hpa:
   name: app1-hpa
   minReplicas: 1
@@ -16,26 +15,20 @@ hpa:
       policies:
         value: 1
         periodSeconds: 60
-
 replicaCount: 1
-
 image:
   repository: us-central1-docker.pkg.dev/hello-project-439605-s1/new-apps-repo/app1
-  tag: app1
+  tag: '{{ github.sha }}'
   pullPolicy: Always
-
 containerPort: 3001
-
 metadata:
   name: app1-deployment
   namespace: default
   labels:
     app: app1
-
 service:
   name: app1-service
   port: 80
   type: ClusterIP
-
-ingress: 
+ingress:
   enabled: true
