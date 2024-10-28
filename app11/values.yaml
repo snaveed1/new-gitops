@@ -18,7 +18,7 @@ hpa:
 replicaCount: 1
 image:
   repository: us-central1-docker.pkg.dev/hello-project-439605-s1/new-apps-repo/app1
-  tag: '0ca85baec76fb85c72caddc341a9b94bede4eb97'
+  tag: 'f0fa4e64facf51d2321e315b33844552a4c32ba0'
   pullPolicy: Always
 containerPort: 3001
 metadata:
